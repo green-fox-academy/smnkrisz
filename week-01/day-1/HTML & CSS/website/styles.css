@@ -1,46 +1,70 @@
-body {
-    background-image: url(/assets/background.png);
-    color: black;
-    font-family: 'Courier Prime', monospace;
-}
-header {
-    background-color: #333333;
-    height: 60px;
-}
-nav {
-    
-    justify-content: space-between;
-    padding: 0 40px;
-    text-align: right;
-
-}
-h1 {
-    font-size: 60px;
-}
-h2 {
-    font-size: 30px;
-}
-h3 {
-    font-size: 40px;
+* {
+    box-sizing: border-box;  
+    margin: 0;
+    padding: 0;
+  }
+  body{    
+    font-family: 'Courier New', Courier, monospace;
+    min-width: 400px;
+    max-width: 100%;  
+    overflow: auto;
+    background-image: url("assets/background.png");
+  }
+  #nav {
+    width: 100%;
+    padding: 8px 10% ;
+    background-color: #333333; 
+    height: auto;  
+    min-height: 45px;   
+  }
+  #nav ul  {  
+    float: right;        
+  }
+  #nav ul li {  
+    float: left;    
+    display: inline;    
+  }
+  #nav li a{    
+    display: block;
+    color: #ff0099; 
+    font-size: 20px;  
     text-align: center;
-    padding-bottom: 30px;
-}
-h4 {
-    font-size: 20px;
-}
-ul {
-    text-decoration: none;
-}
-h2, ul {
-    color: #ff0099 ;
-}
-main {
-    padding: 5% 10% 0 10%;
-}
-.dashed {
+    padding: 5px 10px;       
+  }
+  #nav li a:hover {
+    color: white;
+  }
+  #aboutme{
+    margin: 100px 0 0 0;  
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: 'Robot', sans-serif;
+    padding: 0 10%;
+  }
+  h1{  
+    font-size: 48px;  
+  }
+  #aboutme h2{
+    color: #FF0099;
+    font-weight: normal;
+    font-size: 35px;
+    margin: 20px 0 10px;
+  }
+  p{
+    margin: 8px;
+    padding: 0 10%;
+    line-height: 1.6;  
+  }
+  #separator {
+    margin: 50px;
+    text-align: center;  
+  }
+  #techwiki h2{
+    margin: 30px;
     text-align: center;
-    padding: 40px 0 40px 0;
-}
-p {
-    font-family: 'Roboto', sans-serif;
-}
+    font-size: 38px;
+  }
+  #techwiki h3{
+    font-weight: bolder;
+    font-size: 25px;  
+  }
