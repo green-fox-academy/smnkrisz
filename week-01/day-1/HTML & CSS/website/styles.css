@@ -1,0 +1,46 @@
+body {
+    background-image: url(/assets/background.png);
+    color: black;
+    font-family: 'Courier Prime', monospace;
+}
+header {
+    background-color: #333333;
+    height: 60px;
+}
+nav {
+    
+    justify-content: space-between;
+    padding: 0 40px;
+    text-align: right;
+
+}
+h1 {
+    font-size: 60px;
+}
+h2 {
+    font-size: 30px;
+}
+h3 {
+    font-size: 40px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+h4 {
+    font-size: 20px;
+}
+ul {
+    text-decoration: none;
+}
+h2, ul {
+    color: #ff0099 ;
+}
+main {
+    padding: 5% 10% 0 10%;
+}
+.dashed {
+    text-align: center;
+    padding: 40px 0 40px 0;
+}
+p {
+    font-family: 'Roboto', sans-serif;
+}
