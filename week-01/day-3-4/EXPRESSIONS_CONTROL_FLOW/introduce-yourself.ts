@@ -9,6 +9,10 @@
 //  31
 //  1.87
 
-console.log('Simon Krisztián');
-console.log(27);
-console.log(1.90);
+let myname = 'Simon Krisztián';
+let age = 27;
+let height = 1.90;
+
+console.log(myname);
+console.log(age, 'years old');
+console.log(height, 'm');
