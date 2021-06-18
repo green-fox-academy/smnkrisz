@@ -5,4 +5,3 @@
 
 let favoriteNumber: number = 36;
 console.log('My favorite number is:', favoriteNumber);
-

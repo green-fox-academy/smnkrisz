@@ -1,5 +1,3 @@
-import { features } from "process";
-
 let a: number = 3;
 // make it bigger by 10
 a = a + 10;
@@ -85,4 +83,3 @@ if (j / 3 || j / 5) {
 }  else {
     console.log(false);
 }
-
