@@ -15,4 +15,4 @@ let lineCount: number = 6;
 let space: string = ' ';
 let lineBlock: string = '%';
 
-for (let i: )
+for (let i:
