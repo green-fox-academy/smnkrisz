@@ -10,15 +10,10 @@ export {};
 // Draw 3 squares with that function
 // Avoid code duplication!
 
-
-function squares(startX: number, startY: number){
-    ctx.beginPath();
-    ctx.strokeRect(startX, startY, 50, 50);
-    ctx.stroke();
-}
-    for (let i = 0; i < 3; i++){
-        let secondSquare = i * 30;
-        let thirdSquare = i * 45;
-        
-        squares(secondSquare, thirdSquare);
+    function drawSquares (startX: number, startY: number) {
+        ctx.strokeRect(startX, startY, 50, 50);
     }
+    
+    drawSquares (25, 25);
+    drawSquares (145, 145);
+    drawSquares (250, 250);
