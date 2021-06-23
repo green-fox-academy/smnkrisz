@@ -10,10 +10,10 @@ export {};
 // Draw 3 squares with that function
 // Avoid code duplication!
 
-    function drawSquares (startX: number, startY: number) {
-        ctx.strokeRect(startX, startY, 50, 50);
-    }
-    
-    drawSquares (25, 25);
-    drawSquares (145, 145);
-    drawSquares (250, 250);
+function drawSquares (startX: number, startY: number) {
+    ctx.strokeRect(startX, startY, 50, 50);
+}
+
+drawSquares (25, 25);
+drawSquares (145, 145);
+drawSquares (250, 250);
