@@ -6,8 +6,6 @@
 //   `firstList`
 // - Otherwise log: "firstList is the longer one"
 
-import { setMaxListeners } from "process";
-
 let firsList = [1, 2,3];
 let secondList = [4, 5];
 
