@@ -35,4 +35,5 @@ function singleLine(starts: number[], ends: number[]) {
 }
 singleLine(topLeft, bottomRight);
 
-// the red way: singleLine(topRight, bottomLeft);
+// the red way:
+singleLine(topRight, bottomLeft);

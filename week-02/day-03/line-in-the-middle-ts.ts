@@ -7,8 +7,8 @@ export {};
 // draw a red horizontal line to the canvas' middle
 // draw a green vertical line to the canvas' middle
 
-let canvasHeight: number = 400;
 let canvasWidth: number = 600;
+let canvasHeight: number = 400;
 
 //red horizontal line:
 
