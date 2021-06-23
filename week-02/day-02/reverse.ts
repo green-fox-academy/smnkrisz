@@ -5,7 +5,7 @@ let toBeReversed: string = `.eslaf eb t'ndluow ecnetnes siht ,dehctiws erew esla
 
 function reverse(toBeReversed: string){
     let reverse = '';
-    for ( let i = toBeReversed.length - 1; i >=0; i--){
+    for (let i = toBeReversed.length - 1; i >=0; i--){
         reverse += toBeReversed[i]
     }
     return reverse;
