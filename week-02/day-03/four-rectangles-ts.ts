@@ -7,17 +7,9 @@ export {};
 // Draw four different size and color rectangles
 // Avoid code duplication!
 
-let x: number = 40;
-let y: number = 70;
-let startingPoint: number = 80;
-let colors: string[] = ['blue', 'green', 'purple', 'red'];
+let colors = ["green", "purple", "red", "yellow"]
 
-function rectangles() {
-    for (let i = 0; i < colors.length; i++){
-        ctx.fillStyle = colors[i];
-        ctx.beginPath();
-        ctx.fillRect((x + i * 20), (y + i * 20), startingPoint, startingPoint + i);
-        ctx.stroke();
-    }
-}
-rectangles();
+for (let i = 0; i < 4; i++) {
+    ctx.fillStyle = colors[i];
+    ctx.fillRect(25+85*i, 15+75*i, 35+95*i, 45+65*i);
+  }
