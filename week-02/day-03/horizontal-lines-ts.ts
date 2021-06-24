@@ -20,5 +20,5 @@ function firstLine(startX: number, startY: number){
     ctx.stroke();
 }
     for(let i = 0; i < 5; i++){
-        firstLine(startX, startY + (i * 10));
+        firstLine(startX, startY + (i * 80));
 }
