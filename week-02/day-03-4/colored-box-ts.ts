@@ -34,5 +34,5 @@ ctx.stroke();
 ctx.strokeStyle = 'green';
 ctx.beginPath();
 ctx.moveTo(canvasWidth / 3, canvasHeight - 100);
-ctx.lineTo(canvasWidth / 3, canvasHeight - 300));
+ctx.lineTo(canvasWidth / 3, canvasHeight - 300);
 ctx.stroke();
