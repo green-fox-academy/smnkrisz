@@ -19,7 +19,6 @@ function lines(startX: number, startY: number, endX: number, endY:number, color:
     ctx.stroke();
 }
 
-for (let i = 0; i < canvasWidth / 2; i++){
+for (let i = 0; i < 80; i++){
     lines(0, i * spaceBetweenLines, i * spaceBetweenLines, canvasHeight, 'green');
 }
-
