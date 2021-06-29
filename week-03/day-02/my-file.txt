@@ -1,0 +1,6 @@
+print
+each
+lines
+of
+this
+file
