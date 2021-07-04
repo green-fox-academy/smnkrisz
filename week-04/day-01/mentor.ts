@@ -11,8 +11,6 @@
 // Mentor(name, age, gender, level)
 // Mentor(): sets name to Jane Doe, age to 30, gender to female, level to intermediate
 
-export{};
-
 export class Mentor {
     name: string;
     age: number;
