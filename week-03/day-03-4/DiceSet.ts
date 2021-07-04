@@ -35,24 +35,13 @@ class DiceSet {
   // You can reroll with reroll()
   // Your task is to roll the dice until all of the dice are 6
 
-
 let diceSet = new DiceSet();
 
-console.log(diceSet.roll());
-console.log(diceSet.getCurrent());
+let winner: number [] = [6, 6, 6, 6, 6, 6];
 
-console.log("------------------");
-
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log("------------------");
-
-console.log(diceSet.getCurrent(5));
-diceSet.reroll();
-console.log(diceSet.getCurrent());
-
-console.log("------------------");
-
-diceSet.reroll(4);
-console.log(diceSet.getCurrent());
+for (let i = 0; i < diceSet.numOfDices; i++){
+  while (winner[i] !== diceSet.getCurrent(i)){
+    diceSet.reroll(i);
+  }
+  console.log(diceSet.getCurrent());
+}

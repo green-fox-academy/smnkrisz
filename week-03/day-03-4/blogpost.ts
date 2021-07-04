@@ -3,6 +3,7 @@
 // a title
 // a text
 // a publicationDate
+
 // Create a few blog post objects:
 // "Lorem Ipsum" titled by John Doe posted at "2000.05.04."
 // Lorem ipsum dolor sit amet.
@@ -44,7 +45,6 @@ class BlogPost {
     show(): void {
         console.log(`"${this.title}" titled by ${this.authorName} posted at "${this.publicationDate}" \n ${this.text}`);
     }
-
 }
 
 let blogPost1 = new BlogPost(authorName1, title1, text1, publicationDate1);
@@ -54,5 +54,3 @@ let blogPost3 = new BlogPost(authorName3, title3, text3, publicationDate3);
 blogPost1.show();
 blogPost2.show();
 blogPost3.show();
-
-
