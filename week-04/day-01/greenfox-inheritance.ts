@@ -53,10 +53,10 @@ class Student extends Person {
     previousOrganization: string;
     skippedDays: number = 0;
 
-    constructor(previousOrganization: string = 'The School of Life', skippedDays: number){
-        super();
+    constructor(name?: string, age?: number, gender?: string, previousOrganization: string = 'The School of Life'){
+        super(name, age, gender);
         this.previousOrganization = previousOrganization;
-        this.skippedDays = skippedDays || this.skippedDays;
+        this.skippedDays;
     }
 
     introduce(): void {
@@ -67,8 +67,9 @@ class Student extends Person {
         console.log('My goal is: Be a junior software developer.');       
     }
 
-    skipDays(numberOfDays: number): void {
+    skipDays(numberOfDays: number): number {
         this.skippedDays += numberOfDays;
+        return this.skippedDays;
     }
 }
 
@@ -89,8 +90,8 @@ class Student extends Person {
 class Mentor extends Person {
     level: string;
 
-    constructor(level: string = 'intermediate'){
-        super();
+    constructor(name?: string, age?: number, gender?: string,level: string = 'intermediate'){
+        super(name, age, gender);
         this.level = level;
     }
 
@@ -123,9 +124,9 @@ class Sponsor extends Person {
     company: string;
     hiredStudents: number;
 
-    constructor(company: string = 'Google', hiredStudents: number = 0){
-        super();
-        this.company = company;
+    constructor(name?: string, age?: number, gender?: string,company: string = 'Google', hiredStudents: number = 0){
+        super(name, age, gender);
+        this.company = company;         // or this.company = company || 'Google'
         this.hiredStudents = hiredStudents;
     }
 
@@ -137,8 +138,9 @@ class Sponsor extends Person {
         console.log('My goal is: Hire brilliant junior software developers.');
     }
 
-    hire(): void {
+    hire(): number {
         this.hiredStudents ++;
+        return this.hiredStudents;
     }
 }
 
@@ -158,6 +160,75 @@ class Sponsor extends Person {
 // The Cohort class has the following constructors:
 // Cohort(name): beside the given parameter it sets students and mentors as empty lists
 
-class Cohort{
-    
+class Cohort extends Person {
+    name: string;
+    students: Student[];
+    mentors: Mentor[];
+
+    constructor(name: string) {
+        super();
+        this.name = name;
+        this.students = [];
+        this.mentors = [];
+    }
+
+    addStudent(student: Student): void {
+        this.students.push(student);
+    }
+
+    addMentor(mentor: Mentor): void {
+        this.mentors.push(mentor);
+    }
+
+    info(){
+        console.log(`The ${this.name} cohort has size of ${this.students.length} students and size of ${this.mentors.length} mentors.`);
+    }
 }
+
+let people = [];
+
+let mark = new Person('Mark', 46, 'male');
+people.push(mark);
+
+let jane = new Person();
+people.push(jane);
+
+let john = new Student('John Doe', 20, 'male', 'BME');
+people.push(john);
+
+let student = new Student();
+people.push(student);
+
+let gandhi = new Mentor('Gandhi', 148, 'male', 'senior');
+people.push(gandhi);
+
+let mentor = new Mentor();
+people.push(mentor);
+
+let elon = new Sponsor('Elon Musk', 46, 'male', 'SpaceX');
+people.push(elon);
+
+let sponsor = new Sponsor();
+people.push(sponsor);
+
+student.skipDays(3);
+
+for (let i = 0; i < 6; i++) {
+  elon.hire();
+}
+
+for (let i = 0; i < 4; i++) {
+  sponsor.hire();
+}
+
+for (let person of people) {
+  person.introduce();
+  person.getGoal();
+}
+
+let awesome = new Cohort('AWESOME');
+awesome.addStudent(student);
+awesome.addStudent(john);
+awesome.addMentor(mentor);
+awesome.addMentor(gandhi);
+awesome.info();
