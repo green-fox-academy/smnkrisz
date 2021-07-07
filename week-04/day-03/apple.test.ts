@@ -13,7 +13,7 @@ test('return the apple', t => {
 });
 
 //fail
-test('return the apple', t => {
+test('apple is a color', t => {
     const apple = new Apple();
     const expected = 'yellow';
     
@@ -24,7 +24,7 @@ test('return the apple', t => {
 });
 
 //fail
-test('return the apple', t => {
+test('apple is a number', t => {
     const apple = new Apple();
     const expected = 10;
     
