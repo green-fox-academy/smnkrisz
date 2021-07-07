@@ -9,7 +9,7 @@ test('is inkAmount equal to 100', t => {
 
     t.equal(actual, expected);
     t.end();
-})
+});
 
 test('is inkAmount less than 100', t => {
     const sharpie1 = new Sharpie('green', 10, 80);
@@ -19,4 +19,4 @@ test('is inkAmount less than 100', t => {
 
     t.equal(actual, expected);
     t.end();
-})
+});

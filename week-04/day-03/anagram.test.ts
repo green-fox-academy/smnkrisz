@@ -8,4 +8,4 @@ test('Test the anagrams', t => {
 
     t.equal(actual, expected);
     t.end();
-})
+});
