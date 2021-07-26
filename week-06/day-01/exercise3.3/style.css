@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    height: 500px;
+    padding: 0;
+    background-color: yellow;
+}
+
+.item {
+    width: 90px;
+    height: 90px;
+    margin-left: 5px;
+    list-style: none;
+    background-color: purple;
+}

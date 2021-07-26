@@ -1,0 +1,15 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 500px;
+    padding: 0;
+    background-color: yellow;
+}
+
+.item {
+    width: 90px;
+    height: 90px;
+    list-style: none;
+    background-color: purple;
+}
