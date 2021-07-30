@@ -67,7 +67,13 @@ app.get('/', (req, res) => {
     if (req.query.alcohol === undefined) {
         res.render('home', { cocktails });
     } else {
-        
+        res.render('home', {});
+    }
+});
+
+cocktails.forEach(drink => {
+    if (drink.isAlcoholic !== true) {
+        drink.name += ' (non-alcoholic)'
     }
 });
 
