@@ -67,7 +67,17 @@ app.get('/', (req, res) => {
     if (req.query.alcohol === undefined) {
         res.render('home', { cocktails });
     } else {
-        res.render('home', {});
+        let choosedAlcohol = [];
+        let alcohol = reg.query.alcohol;
+        cocktails.forEach((drink) => {
+            if (drink.contains.indexOf(alcohol) !== -1) {
+                choosedAlcohol.push(drink);
+            } 
+        });
+        res.render('home', {
+            cocktails: choosedAlcohol,
+            alcohol,
+        });
     }
 });
 
