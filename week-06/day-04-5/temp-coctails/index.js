@@ -63,6 +63,7 @@ const cocktails = [
   },
 ];
 
+// added forEach with if..else for filtering alcohol
 app.get('/', (req, res) => {
     if (req.query.alcohol === undefined) {
         res.render('home', { cocktails });
@@ -81,6 +82,7 @@ app.get('/', (req, res) => {
     }
 });
 
+// added forEach for add non-alcoholic after drink's name
 cocktails.forEach(drink => {
     if (drink.isAlcoholic !== true) {
         drink.name += ' (non-alcoholic)'
