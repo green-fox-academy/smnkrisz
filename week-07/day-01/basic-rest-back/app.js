@@ -56,4 +56,15 @@ app.get('/greeter', (req, res) => {
     }
 });
 
+// append-a
+app.get('/appenda/:appendable', (req, res) => {
+    if (req.params.appendable === undefined) {
+        res.status(404);
+    } else {
+        res.send(JSON.stringify({
+            "appended": `${req.params.appendable}a`
+        }));
+    }
+});
+
 app.listen(PORT);
