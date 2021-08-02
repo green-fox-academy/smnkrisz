@@ -67,4 +67,29 @@ app.get('/appenda/:appendable', (req, res) => {
     }
 });
 
+// do-until
+app.post('/dountil/:operation', (req, res) => {
+    let until = req.body.until;
+    let action = req.params.operation;
+    if (action === 'sum') {
+        let sum = 0;
+        for (let i = 0; i <= until; i++) {
+            sum += i;
+        } res.send(JSON.stringify({
+            "result": sum
+        }));
+    } else if (action === 'factor') {
+        let factor = 1;
+        for (let j = 1; j <= until; j++) {
+            factor *= j;
+        } res.send(JSON.stringify({
+            "result": factor
+        }));
+    } else {
+        res.send(JSON.stringify({
+            "error": "Please provide a number!"
+        }));
+    }
+});
+
 app.listen(PORT);
