@@ -18,4 +18,19 @@ app.get('/', (req, res) => {
 
 });
 
+// doubling
+app.get('/doubling', (req, res) => {
+    let input = req.query.input;
+    if (req.query.input === undefined) {
+        res.send(JSON.stringify({
+            "error": "Please provide an input!"
+        }));
+    } else {
+        res.send(JSON.stringify({ 
+            "received": Number(input),
+            "result": Number(input) * 2
+        }));
+    }
+});
+
 app.listen(PORT);
