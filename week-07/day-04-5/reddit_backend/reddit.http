@@ -1,0 +1,29 @@
+### GET all posts
+GET localhost:3000/posts
+
+### Create new post
+POST localhost:3000/posts
+content-type: application/json
+
+{
+    "title": "made from http file",
+    "url": "www.i-did-it.com"
+}
+
+### Modify title and url by id
+POST localhost:3000/posts/4
+content-type: application/json
+
+{
+    "title": "change from http file",
+    "url": "www.i-really-did-it.com"
+}
+
+### Upvote post by 1 by id
+PUT localhost:3000/posts/1/upvote
+
+### Downvote post by 1 by id
+PUT localhost:3000/posts/1/downvote
+
+### Delete post by id
+DELETE localhost:3000/posts/6
