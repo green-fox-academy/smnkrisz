@@ -24,12 +24,12 @@ conn.connect(err => {
 });
 
 app.get('/posts', (req, res) => {
-    conn.query(`SELECT * FROM posts`, (err, rows) => {
+    conn.query(`SELECT * FROM posts;`, (err, rows) => {
         if (err) {
-            console.log(err);
-            res.send(500);
+          console.log(err);
+          res.send(500);
         } else {
-            res.status(200).json({"posts:": rows});
+          res.status(200).json({"posts:": rows});
         }
     });
 });
@@ -38,13 +38,14 @@ app.post('/posts', (req, res) => {
     const newTitle = req.body.title;
     const newURL = req.body.url;
     const currentEpoch = Math.floor(Date.now() / 1000);
-    conn.query(`INSERT INTO posts (title, url, timestamp) VALUES (?, ?, ?);`, [newTitle, newURL, currentEpoch], (err, result) => {
-        if (err) {
-            console.log(err);
-            res.send(500);
-        } else {
-            res.status(200).json(result);
-        }
+    const userName = req.body.owner;
+    conn.query(`INSERT INTO posts (title, url, timestamp, owner) VALUES (?, ?, ?, ?);`, [newTitle, newURL, currentEpoch, userName], (err, result) => {
+      if (err) {
+        console.log(err);
+        res.send(500);
+      } else {
+        res.status(200).json(result);
+      }
     });
 });
 
