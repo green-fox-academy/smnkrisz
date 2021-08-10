@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+}
+
+.item {
+  height: 150px;
+}
+
+.green {
+  background-color: green;
+  flex-grow: 2;
+}
+
+.yellow {
+  background-color: yellow;
+  flex-grow: 6;
+}
+
+.purple {
+  background-color: purple;
+  flex-grow: 2;
+}
+
+@media (max-width: 400px) {
+  .container {
+    flex-direction: column;
+  }
+}
