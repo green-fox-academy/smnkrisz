@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="login-form.css" />
+    <title>Login form</title>
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <h2>ACCOUNT LOGIN</h2>
+        <div class="username-field">
+          <label for="username">USERNAME</label>
+          <input type="text" name="username" id="username" required autofocus />
+        </div>
+        <div class="password-field">
+          <label for="password">PASSWORD</label>
+          <input type="password" name="password" id="password" required />
+          <img src="pwd-eye.svg" />
+        </div>
+        <a href="#">Forgot password?</a>
+        <button type="submit" id="login">Login</button>
+      </form>
+    </div>
+    <script src="login-form.js"></script>
+  </body>
+</html>
