@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="movie-selector.css">
+    <title>Movie selector</title>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <h2>Movie Selector</h2>
+        </div>
+        <form>
+            <div>
+                <select name="selector" id="genre">
+                    <option value="">Select a genre</option>
+                    <option class="sci-fi" value="sci-fi">Sci-fi</option>
+                    <option class="drama" value="drama">Drama</option>
+                    <option class="comedy" value="comedy">Comedy</option>
+                </select>
+            </div>
+            <div>
+                <select name="selector" id="titles">
+                    <option value="">Select a movie</option>
+                    <option class="sci-fi" value="sci-fi">Moon</option>
+                    <option class="sci-fi" value="sci-fi">2001: A Space Odyssey</option>
+                    <option class="sci-fi" value="sci-fi">Contact</option>
+                    <option class="drama" value="drama">There Will Be Blood</option>
+                    <option class="drama" value="drama">American Beauty</option>
+                    <option class="drama" value="drama">Airplane!</option>
+                    <option class="comedy" value="comedy">Deadpool</option>
+                    <option class="comedy" value="comedy">Wayne's World</option>
+                </select>
+            </div>
+        </form>
+        <p>The selected movie is: -</p>
+    </div>
+    <script src="movie-selector.js"></script>
+</body>
+
+</html>

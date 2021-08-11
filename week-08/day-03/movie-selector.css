@@ -1,0 +1,20 @@
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: sans-serif;
+	margin: 200px;
+}
+
+.container {
+	background-color: rgb(255, 177, 190);
+	height: 200px;
+	width: 500px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 15px;
+	border-style: none;
+	box-shadow: 14px 14px 0px #8792e3;
+}
