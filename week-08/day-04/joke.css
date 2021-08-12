@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Special+Elite&display=swap");
+
+body {
+	background-color: antiquewhite;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+div {
+	background-color: aliceblue;
+	border-radius: 50px;
+	font-family: "Special Elite", cursive;
+	padding: 20px;
+}
+
+button {
+	justify-content: center;
+	padding: 20px;
+	margin-top: 20px;
+	color: white;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 1.5px;
+	border-radius: 10px;
+	border-style: none;
+	background: #62a2e6;
+	box-shadow: 6px 6px 0px #2a4662;
+}
