@@ -29,3 +29,11 @@ button {
 	background: #62a2e6;
 	box-shadow: 6px 6px 0px #2a4662;
 }
+
+button:hover {
+	background: #2b89ee;
+}
+
+button:active {
+	background: #ecb43c;
+}
