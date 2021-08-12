@@ -11,7 +11,7 @@ form.addEventListener('click', () => {
     if (dog.checked === true || cat.checked === true) {
         signUp.removeAttribute('disabled')
     }
-    if (dog.checked === true || cat.checked === true && yes.checked === true) {
+    if (yes.checked === true) {
         loveCat.removeAttribute('disabled')
         loveCat.addEventListener('click', () => {
             alert(`Thank you, you've successfully signed up for cat facts!`)
