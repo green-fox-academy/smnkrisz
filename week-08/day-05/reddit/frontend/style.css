@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+body {
+	font-family: "Lato", sans-serif;
+	margin: 0;
+	background-color: rgb(228, 228, 228);
+}
+
+header {
+	display: flex;
+	flex-direction: column;
+	background-image: url("./space.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	justify-content: center;
+	align-items: center;
+	height: 200px;
+}
+
+h2 {
+	display: flex;
+	align-items: center;
+	text-transform: uppercase;
+	color: aliceblue;
+	letter-spacing: 10px;
+}
+
+.container {
+	display: flex;
+}
