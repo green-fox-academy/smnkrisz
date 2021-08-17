@@ -1,0 +1,24 @@
+.container {
+	background-color: blueviolet;
+	height: 200px;
+	display: grid;
+	grid-template-columns: 1fr 3fr 1fr;
+	column-gap: 10px;
+	padding: 10px;
+	color: white;
+	text-align: center;
+}
+
+span {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.side {
+	background-color: yellow;
+}
+
+.middle {
+	background-color: green;
+}
