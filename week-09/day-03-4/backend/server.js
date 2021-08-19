@@ -53,29 +53,26 @@ app.get('/api/questions', (req, res) => {
 })
 
 app.post('/api/questions', async (req, res) => {
-    let question = req.body.question
-    let answers = req.body.answers
+    const question = req.body.question
+    const answers = req.body.answers
 
-    db.query('INSERT INTO questions(question) VALUES (?);', [question], (err, result) => {
+    db.query('INSERT INTO questions (question) VALUES ?;', [question], (err, result) => {
         if (err) {
             console.log(err)
-            res.send(404)
-        } else {
-            answers.foreach(async (element, index) => {
-                try {
-                    let answerString = `answer_${index + 1}`
-                    await db.promise().query('INSERT INTO answers (answer, question_id, is_correct) VALUES (?, ?, ?)', [element[answerString], result.insertId, element.is_correct], (err, result) => {
-                        if (err) {
-                            console.log(err)
-                            res.send(404)
-                        }
-                    })
-                } catch (error) {
-                    console.log(error)
-                }
-            })
-            res.status(200).json({ insert: "OK" })
+            res.sendStatus(500)
         }
+        const questionInsertId = result.insertId
+        answers.foreach(async (answer, index) => {
+            try {
+                const queryString = 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, ?);'
+                const answerSting = `answer_${index + 1}`
+                await db.promise().query(queryString, [questionInsertId, answer[answerSting], answer.is_correct])
+            } catch (error) {
+                console.log(error)
+                res.sendStatus(500)
+            }
+        })
+        res.status(200).json()
     })
 })
 
