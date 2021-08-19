@@ -28,19 +28,6 @@ db.connect(err => {
     }
 });
 
-// app.get('/api/game', (req, res) => {
-//     db.query('SELECT * FROM questions;', (err, result) => {
-//         let questionLength = result.length
-//         let randomQ = Math.floor(Math.random() * questionLength)
-//         if (err) {
-//             console.log(err)
-//             res.send(404)
-//         } else {
-//             res.status(200).json(result[randomQ])
-//         }
-//     })
-// })
-
 app.get('/api/game', (req, res) => {
     db.query('SELECT * FROM questions;', (err, rows) => {
         if (err) {
@@ -66,7 +53,6 @@ app.get('/api/game', (req, res) => {
         })
     })
 })
-
 
 app.get('/api/questions', (req, res) => {
     db.query('SELECT * FROM questions;', (err, result) => {
