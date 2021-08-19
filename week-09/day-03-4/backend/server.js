@@ -4,7 +4,7 @@ import dotenv from 'dotenv'
 import cors from 'cors'
 
 const app = express()
-const PORT = 8080
+const PORT = 3000
 
 dotenv.config()
 app.use(express.json())
@@ -28,18 +28,45 @@ db.connect(err => {
     }
 });
 
+// app.get('/api/game', (req, res) => {
+//     db.query('SELECT * FROM questions;', (err, result) => {
+//         let questionLength = result.length
+//         let randomQ = Math.floor(Math.random() * questionLength)
+//         if (err) {
+//             console.log(err)
+//             res.send(404)
+//         } else {
+//             res.status(200).json(result[randomQ])
+//         }
+//     })
+// })
+
 app.get('/api/game', (req, res) => {
-    db.query('SELECT * FROM questions;', (err, result) => {
-        let questionLength = result.length
-        let randomQ = Math.floor(Math.random() * questionLength)
+    db.query('SELECT * FROM questions;', (err, rows) => {
         if (err) {
             console.log(err)
-            res.send(404)
-        } else {
-            res.status(200).json(result[randomQ])
+            res.status(500).json()
         }
+        let dbResults = Object.values(JSON.parse(JSON.stringify(rows)))
+        const randomNumber = Math.floor(Math.random() * (dbResults.length))
+        const randomQuestion = dbResults[randomNumber]
+        const questionID = randomQuestion.id
+        db.query('SELECT * FROM answers WHERE question_id = ?;', [questionID], (err, answers) => {
+            if (err) {
+                console.log(err)
+                res.status(500).json()
+            } else {
+                const result = {
+                    id: questionID,
+                    question: randomQuestion.question,
+                    answers
+                }
+                res.status(200).send(result)
+            }
+        })
     })
 })
+
 
 app.get('/api/questions', (req, res) => {
     db.query('SELECT * FROM questions;', (err, result) => {
@@ -76,4 +103,15 @@ app.post('/api/questions', async (req, res) => {
     })
 })
 
-app.listen(PORT);
+app.delete('/api/questions/:id', (req, res) => {
+    const query = 'DELETE FROM questions WHERE id = ?;'
+    const id = req.params.id
+    db.query(query, [id], (err, result) => {
+        if (err) {
+            console.log(err)
+            res.sendStatus(500)
+        }
+    })
+})
+
+app.listen(PORT, console.log(`Listening on ${PORT}`));
