@@ -1,0 +1,16 @@
+#content-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#music-player {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: aquamarine;
+	height: 150px;
+	width: 500px;
+	padding: 20px 20px;
+	border-radius: 35px;
+}
