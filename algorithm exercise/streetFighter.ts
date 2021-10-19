@@ -32,4 +32,6 @@ export function streetFighterSelection(
 
 		items.push(fighters[position[0]][position[1]]);
 	});
+
+	return items;
 }
